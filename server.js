@@ -22,12 +22,6 @@ app.use(logger);
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  connection.query(`select * from counter;`, (error, data, fields) => {
-    res.send(JSON.stringify(data));
-  });
-});
-
 app.get("/userCount", (req, res) => {
   connection.query(`select count(*) as count from counter`, (error, data, field) => {
     res.send(data[0]);
@@ -45,4 +39,5 @@ app.post("/addUser", (req, res) => {
   );
 });
 
+app.use(express.static("react-with-express-and-sql/build"));
 app.listen(PORT, () => console.log("Listning on ", PORT));

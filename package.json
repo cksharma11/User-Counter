@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "cd react-with-express-and-sql && npm run build && cd .. && nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +13,10 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-script": "^2.0.5",
+    "react-scripts": "^2.1.8"
   }
 }
