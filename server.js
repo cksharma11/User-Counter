@@ -5,10 +5,10 @@ const app = new express();
 const PORT = process.env.PORT || 8080;
 
 const connection = mysql.createConnection({
-  host: "us-cdbr-iron-east-02.cleardb.net",
-  user: "be71d2cfaa76c7",
-  password: "99eec681",
-  database: "heroku_88c09bc5bedc827"
+  host: process.env.HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PWD,
+  database: process.env.DB_IN_USE
 });
 
 connection.connect();
